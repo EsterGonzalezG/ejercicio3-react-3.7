@@ -6,10 +6,15 @@ class OnionHater extends React.Component {
     this.inputtext=this.inputtext.bind(this);
   }
   inputtext(event){
-    if(event.currentTarget.value.toLowerCase().includes('cebolla')){
-      event.currentTarget.classList.toggle('colorOdio');
+    if(  event.currentTarget.classList.contains('colorNoOdio')){
+      event.currentTarget.classList.remove('colorNoOdio');
     }else{
-        event.currentTarget.classList.toggle('colorNoOdio');
+      event.currentTarget.classList.remove('colorOdio');
+    }
+    if(event.currentTarget.value.toLowerCase().includes('cebolla')){
+      event.currentTarget.classList.add('colorOdio');
+    }else{
+        event.currentTarget.classList.add('colorNoOdio');
     }
     this.forceUpdate();
   }
